@@ -1,0 +1,27 @@
+.header_section {
+    display: flex;
+    background: white;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0rem;
+    cursor: pointer;
+}
+
+.header_input input {
+    border-radius: 0.2rem;
+    width: 25rem;
+    height: 2rem;
+}
+
+.header_input button {
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.header_sell_btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+}

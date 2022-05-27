@@ -249,6 +249,36 @@
       "country": "df",
       "password": "dfdfddf",
       "id": 10
+    },
+    {
+      "firstname": "Harsh ",
+      "lastname": "Maisuri",
+      "mobileno": "1234567890",
+      "emailid": "hash@123fgmail.com",
+      "city": "Bhruch",
+      "country": "India",
+      "password": "1231232",
+      "id": 11
+    },
+    {
+      "firstname": "Hardip",
+      "lastname": "Martoja",
+      "mobileno": "1593571230",
+      "emailid": "hardip@12gmail.com",
+      "city": "Bhruch",
+      "country": "India",
+      "password": "25622",
+      "id": 12
+    },
+    {
+      "firstname": "Vraj",
+      "lastname": "Bhrambhatt",
+      "mobileno": "1234567890",
+      "emailid": "vraj@123gamil.com",
+      "city": "Padra",
+      "country": "India",
+      "password": "123456",
+      "id": 13
     }
   ]
 }

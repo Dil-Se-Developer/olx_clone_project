@@ -15,7 +15,7 @@ const SignUpForm = (props) => {
     password: "",
   };
 
-  const loginNavigate = useNavigate();
+  const Navigate = useNavigate();
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -26,10 +26,10 @@ const SignUpForm = (props) => {
     // console.log(formValues);
   };
 
-  const loginHandler = (event) => {
-    event.preventDefault();
-    loginNavigate("/login");
-  };
+  // const loginHandler = (event) => {
+  //   event.preventDefault();
+  //   loginNavigate("/login");
+  // };
 
   const signupHandler = (event) => {
     event.preventDefault();
@@ -56,7 +56,7 @@ const SignUpForm = (props) => {
               .post("http://localhost:3000/users", formValues)
               .then((response) => response.data)
               .then((userData) => {
-                loginNavigate("/login", { replace: true });
+                Navigate("/home", { replace: true });
               })
               .catch((error) => {
                 console.log(error);
@@ -114,6 +114,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.firstname}
           onHandleChange={handleChange}
           errorMessage={formErrors.lastname}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -123,6 +124,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.lastname}
           onHandleChange={handleChange}
           errorMessage={formErrors.lastname}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -132,6 +134,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.mobileno}
           onHandleChange={handleChange}
           errorMessage={formErrors.mobileno}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -141,6 +144,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.emailid}
           onHandleChange={handleChange}
           errorMessage={formErrors.emailid}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -150,6 +154,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.city}
           onHandleChange={handleChange}
           errorMessage={formErrors.city}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -159,6 +164,7 @@ const SignUpForm = (props) => {
           inputValue={formValues.country}
           onHandleChange={handleChange}
           errorMessage={formErrors.country}
+          customClass={"form_input"}
         />
 
         <FormInput
@@ -168,12 +174,13 @@ const SignUpForm = (props) => {
           inputValue={formValues.password}
           onHandleChange={handleChange}
           errorMessage={formErrors.password}
+          customClass={"form_input"}
         />
 
         <div className="form_input">
-          <button onClick={loginHandler} className="form_btn">
+          {/* <button onClick={loginHandler} className="form_btn">
             Login
-          </button>
+          </button> */}
           <button onClick={signupHandler} className="form_btn">
             Sign Up
           </button>
