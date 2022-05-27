@@ -1,109 +1,254 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "title": "Product 1",
-            "category": "electronics",
-            "price": 4000,
-            "description": "This is description about product 1"
-        },
-        {
-            "id": 2,
-            "title": "Product 2",
-            "category": "electronics",
-            "price": 2000,
-            "description": "This is description about product 2"
-        },
-        {
-            "id": 3,
-            "title": "Product 3",
-            "category": "books",
-            "price": 1000,
-            "description": "This is description about product 3"
-        },
-        {
-            "id": 4,
-            "title": "Product 4",
-            "category": "fitness",
-            "price": 3000,
-            "description": "This is description about product 4"
-        },
-        {
-            "id": 5,
-            "title": "Product 5",
-            "category": "fitness",
-            "price": 4000,
-            "description": "This is description about product 5"
-        },
-        {
-            "id": 6,
-            "title": "Product 6",
-            "category": "gardening",
-            "price": 5000,
-            "description": "This is description about product 6"
-        },
-        {
-            "id": 7,
-            "title": "Product 7",
-            "category": "furniture",
-            "price": 6000,
-            "description": "This is description about product 7"
-        },
-        {
-            "id": 8,
-            "title": "Product 8",
-            "category": "furniture",
-            "price": 7000,
-            "description": "This is description about product 8"
-        },
-        {
-            "id": 9,
-            "title": "Product 9",
-            "category": "accessories",
-            "price": 4000,
-            "description": "This is description about product 9"
-        },
-        {
-            "id": 10,
-            "title": "Product 10",
-            "category": "electronics",
-            "price": 3000,
-            "description": "This is description about product 10",
-            "discount": {
-                "type": "shipping"
-            }
-        }
-    ],
-    "reviews": [
-        {
-            "id": 1,
-            "rating": 3,
-            "comment": "Review 1 for product id 1",
-            "productId": 1
-        },
-        {
-            "id": 2,
-            "rating": 4,
-            "comment": "Review 2 for product id 1",
-            "productId": 1
-        },
-        {
-            "id": 3,
-            "rating": 4,
-            "comment": "Review 3 for product id 1",
-            "productId": 1
-        },
-        {
-            "id": 4,
-            "rating": 5,
-            "comment": "Review 1 for product id 2",
-            "productId": 2
-        },
-        {
-            "id": 1,
-            "rating": 3,
-            "comment": "Review 1 for product id 3",
-            "productId": 3
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "category": "electronics",
+      "price": 4000,
+      "description": "This is description about product 1"
+    },
+    {
+      "id": 2,
+      "title": "Product 2",
+      "category": "electronics",
+      "price": 2000,
+      "description": "This is description about product 2"
+    },
+    {
+      "id": 3,
+      "title": "Product 3",
+      "category": "books",
+      "price": 1000,
+      "description": "This is description about product 3"
+    },
+    {
+      "id": 4,
+      "title": "Product 4",
+      "category": "fitness",
+      "price": 3000,
+      "description": "This is description about product 4"
+    },
+    {
+      "id": 5,
+      "title": "Product 5",
+      "category": "fitness",
+      "price": 4000,
+      "description": "This is description about product 5"
+    },
+    {
+      "id": 6,
+      "title": "Product 6",
+      "category": "gardening",
+      "price": 5000,
+      "description": "This is description about product 6"
+    },
+    {
+      "id": 7,
+      "title": "Product 7",
+      "category": "furniture",
+      "price": 6000,
+      "description": "This is description about product 7"
+    },
+    {
+      "id": 8,
+      "title": "Product 8",
+      "category": "furniture",
+      "price": 7000,
+      "description": "This is description about product 8"
+    },
+    {
+      "id": 9,
+      "title": "Product 9",
+      "category": "accessories",
+      "price": 4000,
+      "description": "This is description about product 9"
+    },
+    {
+      "id": 10,
+      "title": "Product 10",
+      "category": "electronics",
+      "price": 3000,
+      "description": "This is description about product 10",
+      "discount": {
+        "type": "shipping"
+      }
+    },
+    {
+      "title": "Product 100",
+      "category": "electronics",
+      "price": 4000,
+      "description": "This is description about product 100",
+      "id": 11
+    },
+    {
+      "title": "Product 100",
+      "category": "electronics",
+      "price": 4000,
+      "description": "This is description about product 100",
+      "id": 12
+    },
+    {
+      "title": "Product 000",
+      "category": "electronics",
+      "price": 4000,
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "firstname": "virat",
+      "lastname": "kohli",
+      "mobileno": "1234567890",
+      "emailid": "vk18@gmail.com",
+      "city": "delhi",
+      "country": "india",
+      "password": "123456789",
+      "id": 24
+    },
+    {
+      "firstname": "mahendra",
+      "lastname": "dhoni",
+      "mobileno": "1234567890",
+      "emailid": "msdhoni7@gmai.com",
+      "city": "Ranchi",
+      "country": "India",
+      "password": "125644",
+      "id": 25
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 3,
+      "comment": "Review 1 for product id 1",
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "rating": 4,
+      "comment": "Review 2 for product id 1",
+      "productId": 1
+    },
+    {
+      "id": 3,
+      "rating": 4,
+      "comment": "Review 3 for product id 1",
+      "productId": 1
+    },
+    {
+      "id": 4,
+      "rating": 5,
+      "comment": "Review 1 for product id 2",
+      "productId": 2
+    },
+    {
+      "id": 1,
+      "rating": 3,
+      "comment": "Review 1 for product id 3",
+      "productId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstname": "shail",
+      "lastname": "shah",
+      "mobileno": "1234567890",
+      "emailid": "shailshah12@gmai.com",
+      "city": "vadodara",
+      "country": "india",
+      "password": "123456"
+    },
+    {
+      "firstname": "mahendra",
+      "lastname": "dhoni",
+      "mobileno": "1234567890",
+      "emailid": "msdhoni7@gmai.com",
+      "city": "Ranchi",
+      "country": "India",
+      "password": "125644",
+      "id": 2
+    },
+    {
+      "firstname": "Virat",
+      "lastname": "Kohli",
+      "mobileno": "1365654100",
+      "emailid": "vk18@gmail.com",
+      "city": "delhi",
+      "country": "india",
+      "password": "12356897",
+      "id": 3
+    },
+    {
+      "firstname": "Sachin",
+      "lastname": "Tendulakar",
+      "mobileno": "1597531230",
+      "emailid": "sachin@10gmail.com",
+      "city": "Mumbai",
+      "country": "India",
+      "password": "1545623124",
+      "id": 4
+    },
+    {
+      "firstname": "Rishbh",
+      "lastname": "Pant",
+      "mobileno": "1266453100",
+      "emailid": "Rishbh@77gmail.com",
+      "city": "Delhi",
+      "country": "India",
+      "password": "15644",
+      "id": 5
+    },
+    {
+      "firstname": "Glen",
+      "lastname": "Maxwell",
+      "mobileno": "4645464565",
+      "emailid": "maxwell25@gmail.com",
+      "city": "Sydeny",
+      "country": "Austrilia",
+      "password": "1232123",
+      "id": 6
+    },
+    {
+      "firstname": "Yuvraj",
+      "lastname": "Singh",
+      "mobileno": "1266513146",
+      "emailid": "yuvi@12gmail.com",
+      "city": "chandigadh",
+      "country": "india",
+      "password": "165464564",
+      "id": 7
+    },
+    {
+      "firstname": "Nandit",
+      "lastname": "shah",
+      "mobileno": "6353259206",
+      "emailid": "Nanditshah105@gmail.com",
+      "city": "Vadodara",
+      "country": "y7u",
+      "password": "123sds",
+      "id": 8
+    },
+    {
+      "firstname": "Nandit",
+      "lastname": "shah",
+      "mobileno": "6353259206",
+      "emailid": "Nandit05@gmail.com",
+      "city": "Vadodara",
+      "country": "y7u",
+      "password": "sdsdd",
+      "id": 9
+    },
+    {
+      "firstname": "Shail",
+      "lastname": "Shah",
+      "mobileno": "9979906454",
+      "emailid": "shailshah2526@gmail.com",
+      "city": "Vadodara",
+      "country": "df",
+      "password": "dfdfddf",
+      "id": 10
+    }
+  ]
 }

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import FormInput from "../UI/FormInput";
 import "./SignUpForm.css";
 
 const SignUpForm = (props) => {
@@ -11,6 +14,8 @@ const SignUpForm = (props) => {
     country: "",
     password: "",
   };
+
+  const loginNavigate = useNavigate();
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -23,8 +28,7 @@ const SignUpForm = (props) => {
 
   const loginHandler = (event) => {
     event.preventDefault();
-    console.log('hii');
-    
+    loginNavigate("/login");
   };
 
   const signupHandler = (event) => {
@@ -33,13 +37,37 @@ const SignUpForm = (props) => {
     setIsSubmit(true);
   };
 
-
   useEffect(() => {
     // console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
+      axios
+        .get("http://localhost:3000/users")
+        .then((responses) => responses.data)
+        .then((usersData) => {
+          let usersEmail = usersData.map((user) => user.emailid);
+          return usersEmail.includes(formValues.emailid);
+        })
+        .then((userExist) => {
+          if (userExist) {
+            alert("User is already there");
+          } else {
+            axios
+              .post("http://localhost:3000/users", formValues)
+              .then((response) => response.data)
+              .then((userData) => {
+                loginNavigate("/login", { replace: true });
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-  }, [formErrors,isSubmit,formValues]);
+  }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -78,95 +106,75 @@ const SignUpForm = (props) => {
 
   return (
     <div className="form_card">
-      {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div>Signed in successfully</div>
-      ) : (
-        <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-      )}
-
       <form>
+        <FormInput
+          inputLabel="First Name:-"
+          inputType="text"
+          inputName="firstname"
+          inputValue={formValues.firstname}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.lastname}
+        />
+
+        <FormInput
+          inputLabel="Last Name:-"
+          inputType="text"
+          inputName="lastname"
+          inputValue={formValues.lastname}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.lastname}
+        />
+
+        <FormInput
+          inputLabel="Mobile No:-"
+          inputType="number"
+          inputName="mobileno"
+          inputValue={formValues.mobileno}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.mobileno}
+        />
+
+        <FormInput
+          inputLabel="Email ID:-"
+          inputType="email"
+          inputName="emailid"
+          inputValue={formValues.emailid}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.emailid}
+        />
+
+        <FormInput
+          inputLabel="City:-"
+          inputType="text"
+          inputName="city"
+          inputValue={formValues.city}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.city}
+        />
+
+        <FormInput
+          inputLabel="Country:-"
+          inputType="text"
+          inputName="country"
+          inputValue={formValues.country}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.country}
+        />
+
+        <FormInput
+          inputLabel="Password:-"
+          inputType="password"
+          inputName="password"
+          inputValue={formValues.password}
+          onHandleChange={handleChange}
+          errorMessage={formErrors.password}
+        />
+
         <div className="form_input">
-          <label htmlFor="firstname">First Name:-</label>
-          <input
-            type="text"
-            name="firstname"
-            id="firstname"
-            value={formValues.firstname}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.firstname}</p>
-        <div className="form_input">
-          <label htmlFor="lastname">Last Name:-</label>
-          <input
-            type="text"
-            name="lastname"
-            id="lastname"
-            value={formValues.lastname}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.lastname}</p>
-        <div className="form_input">
-          <label htmlFor="mobileno">Mobile No:-</label>
-          <input
-            type="number"
-            name="mobileno"
-            id="mobileno"
-            value={formValues.mobileno}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.mobileno}</p>
-        <div className="form_input">
-          <label htmlFor="emailid">Email ID:-</label>
-          <input
-            type="email"
-            name="emailid"
-            id="emailid"
-            value={formValues.emailid}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.emailid}</p>
-        <div className="form_input">
-          <label htmlFor="city">City:-</label>
-          <input
-            type="text"
-            name="city"
-            id="city"
-            value={formValues.city}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.city}</p>
-        <div className="form_input">
-          <label htmlFor="country">Country:-</label>
-          <input
-            type="text"
-            name="country"
-            id="country"
-            value={formValues.country}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.country}</p>
-        <div className="form_input">
-          <label htmlFor="password">Password:-</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={formValues.password}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.password}</p>
-        <div className="form_input">
-          <button onClick={loginHandler} className="form_btn" type="submit">
+          <button onClick={loginHandler} className="form_btn">
             Login
           </button>
-          <button onClick={signupHandler} className="form_btn" type="submit">
+          <button onClick={signupHandler} className="form_btn">
             Sign Up
           </button>
         </div>
