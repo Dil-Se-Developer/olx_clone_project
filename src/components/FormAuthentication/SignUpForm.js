@@ -50,7 +50,7 @@ const SignUpForm = (props) => {
         })
         .then((userExist) => {
           if (userExist) {
-            alert("User is already there");
+            alert("User is already exit");
           } else {
             axios
               .post("http://localhost:3000/users", formValues)

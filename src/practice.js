@@ -54,3 +54,31 @@
     //   )}
 
 
+
+    // <nav className="subheader_section">
+    //   <NavLink style={navLinkStyles} to="/home">
+    //     All Categories
+    //   </NavLink>
+    //   <NavLink style={navLinkStyles} to="/home/cars">
+    //     Cars
+    //   </NavLink>
+    //   <NavLink style={navLinkStyles} to="/home">
+    //     Motorcycles
+    //   </NavLink>
+    //   <NavLink style={navLinkStyles} to="/home">
+    //     Mobile Phones
+    //   </NavLink>
+    //   <NavLink style={navLinkStyles} to="/home">
+    //     Scooters
+    //   </NavLink>
+    //   <NavLink style={navLinkStyles} to="/home">
+    //     Commercial & Other Vehicles
+    //   </NavLink>
+    // </nav>
+
+
+    // const navLinkStyles = ({ isActive }) => {
+  //   return {
+  //     fontWeight: isActive ? "bold" : "normal",
+  //   };
+  // };

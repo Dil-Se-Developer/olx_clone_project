@@ -2,10 +2,26 @@
     display: flex;
     justify-content: space-evenly;
     background-color: rgb(229, 221, 221);
-    padding: 0.5rem 0rem;
+    /* padding: 0.5rem 0rem; */
 }
 
-.subheader_section a {
+.subheader_section button {
     text-decoration: none;
-    color: black;
+    background: none;
+    border: none;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
 }
+
+.subheader_section button:hover {
+    background-color: black !important;
+    color: white;
+}
+
+.button-selected{
+    background-color: rgb(162, 147, 147) !important;
+    color: white;
+}
+
+
+

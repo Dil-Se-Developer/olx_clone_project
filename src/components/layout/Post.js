@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../UI/FormInput";
 import "./Post.css";
 
@@ -12,8 +14,10 @@ const Post = (props) => {
     postimg: ""
   };
 
+  const Navigate = useNavigate();
+
   const [formValues, setFormValues] = useState(intialValues);
-  const [formErrors, setFormErrors] = useState({});
+  // const [formErrors, setFormErrors] = useState({});
   // const [baseImage, setBaseImage] = useState("");
 
 
@@ -30,6 +34,18 @@ const Post = (props) => {
     event.preventDefault();
     // setFormErrors(validate(formValues));
     validate(formValues)
+    if (!Object.values(formValues).includes("")) {
+      axios
+        .post("http://localhost:3000/sellproducts", formValues)
+        .then((response) => response.data)
+        .then((postData) => {
+          console.log(postData);
+          Navigate("/home");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     console.log(formValues);
   };
 
@@ -86,7 +102,6 @@ const Post = (props) => {
 
       <div className="form_card">
         <h1>Post Your AD</h1>
-        <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         <form>
           <div className="form_input">
             <label htmlFor="category">Choose A Category:- </label>
@@ -160,7 +175,7 @@ const Post = (props) => {
 
           <div className="form_input">
             <button className="form_btn" onClick={postHandler}>
-              Post Now
+              POST
             </button>
           </div>
         </form>

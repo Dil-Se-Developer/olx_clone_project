@@ -1,0 +1,31 @@
+.sellcard {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    cursor: pointer;
+    padding: 0.8rem;
+    border: 1px solid rgba(14,4,5,.2);
+    border-radius: 4px;
+}
+
+.sellcard img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.sellcard h3{
+    margin: 0.2rem;
+}
+
+.sellcard p{
+    margin: 0rem 0.2rem;
+    font-weight: 500;
+}
+
+.sellcard span{
+    margin: 0rem 0.2rem;
+    color: rgba(0,47,52,.64);
+    font-size: 0.8rem;
+}

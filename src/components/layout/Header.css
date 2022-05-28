@@ -25,3 +25,7 @@
     align-items: center;
     border-radius: 1rem;
 }
+
+.logout_btn {
+    padding: 0.55rem;
+}

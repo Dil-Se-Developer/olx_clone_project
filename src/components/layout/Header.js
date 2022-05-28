@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsChat, BsSearch } from "react-icons/bs";
 import { MdNotificationsNone } from "react-icons/md";
@@ -6,6 +6,7 @@ import { IoAddSharp } from "react-icons/io5";
 import "./Header.css";
 
 const Header = (props) => {
+  const [searchInput, setSearchInput] = useState("")
   const onSearchHandle = (event) => {
     event.preventDefault();
   };
@@ -16,6 +17,11 @@ const Header = (props) => {
     event.preventDefault();
     Navigate("post");
   };
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    Navigate("/", { replace: true });
+  }
 
   return (
     <header className="header_section">
@@ -33,8 +39,12 @@ const Header = (props) => {
           <input
             type="text"
             placeholder="Find Cars,Mobile Phones and more..."
+            value={searchInput}
+            onChange={(event) => {
+              setSearchInput(event.target.value)
+            }}
           />
-          <button>
+          <button onClick={() => props.handleSearch(searchInput)}>
             <BsSearch />
           </button>
         </div>
@@ -44,6 +54,9 @@ const Header = (props) => {
       <button className="header_sell_btn" onClick={sellHandler}>
         <IoAddSharp size="2rem" />
         SELL
+      </button>
+      <button className="header_sell_btn logout_btn" onClick={logoutHandler}>
+        Logout
       </button>
     </header>
   );
