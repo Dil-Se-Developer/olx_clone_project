@@ -1,3 +1,5 @@
-.post{
-    color: aliceblue;
+.post_header {
+    background: white;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
 }

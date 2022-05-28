@@ -11,6 +11,9 @@ const SubHeader = () => {
   return (
     <nav className="subheader_section">
       <NavLink style={navLinkStyles} to="/">
+        All Categories
+      </NavLink>
+      <NavLink style={navLinkStyles} to="/">
         Cars
       </NavLink>
       <NavLink style={navLinkStyles} to="/">

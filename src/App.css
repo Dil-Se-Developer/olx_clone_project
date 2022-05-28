@@ -20,6 +20,7 @@ body {
     color: red;
     text-align: center;
 }
+
 .form_input {
     padding: 10px;
 }
@@ -30,6 +31,15 @@ body {
 
 .form_input input {
     padding: 0.3rem;
+}
+
+.form_input textarea {
+    padding: 0.3rem;
+}
+
+.form_input select {
+    padding: 0.3rem;
+    width: 13rem;
 }
 
 .form_btn {
