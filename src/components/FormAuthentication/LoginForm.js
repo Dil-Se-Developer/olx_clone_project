@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import FormInput from "../UI/FormInput";
+import GeneralHeader from '../UI/GeneralHeader';
 import "./LoginForm.css";
 
 const LoginForm = (props) => {
@@ -46,6 +47,10 @@ const LoginForm = (props) => {
   };
 
   useEffect(() => {
+    // function disableBack() { window.history.forward() }
+    // setTimeout(disableBack(), 0)
+    //   window.onunload = function () { return null }
+    
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       axios
         .get("http://localhost:3000/users")
@@ -63,8 +68,9 @@ const LoginForm = (props) => {
         })
         .then((userExist) => {
           if (userExist) {
+            props.handleLogin()
             Navigate("/home");
-          }else {
+          } else {
             alert("Kindly Check emailid and password");
           }
         })
@@ -75,34 +81,37 @@ const LoginForm = (props) => {
   }, [formErrors]);
 
   return (
-    <div className="form_card">
-      <form>
-        <FormInput
-          inputLabel="Email ID:-"
-          inputType="email"
-          inputName="emailid"
-          inputValue={formValues.emailid}
-          errorMessage={formErrors.emailid}
-          onHandleChange={handleChange}
-          customClass={"form_input"}
-        />
-        <FormInput
-          inputLabel="Password:-"
-          inputType="password"
-          inputName="password"
-          inputValue={formValues.password}
-          errorMessage={formErrors.password}
-          onHandleChange={handleChange}
-          customClass={"form_input"}
-        />
-        <Link to="signup">Create an account</Link>
-        <div className="form_input login_btn">
-          <button className="form_btn" onClick={loginHandler}>
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
+    <>
+      <GeneralHeader />
+      <div className="form_card">
+        <form>
+          <FormInput
+            inputLabel="Email ID:-"
+            inputType="email"
+            inputName="emailid"
+            inputValue={formValues.emailid}
+            errorMessage={formErrors.emailid}
+            onHandleChange={handleChange}
+            customClass={"form_input"}
+          />
+          <FormInput
+            inputLabel="Password:-"
+            inputType="password"
+            inputName="password"
+            inputValue={formValues.password}
+            errorMessage={formErrors.password}
+            onHandleChange={handleChange}
+            customClass={"form_input"}
+          />
+          <Link to="signup">Create an account</Link>
+          <div className="form_input login_btn">
+            <button className="form_btn" onClick={loginHandler}>
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 .sort_section {
-    background: white;
+    background: var(--main-heading);
     padding: 0.5rem 2rem;
     display: flex;
     justify-content: flex-end;
@@ -12,5 +12,5 @@
 .sort_section select {
     border: none;
     outline: unset;
-    color: rgb(119, 109, 109);
+    color: gray;
 }

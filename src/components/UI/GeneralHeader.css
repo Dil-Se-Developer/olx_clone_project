@@ -1,5 +1,5 @@
 .general_header {
-    background: white;
+    background: var(--main-heading);
     padding: 0.6rem 1.5rem;
     cursor: pointer;
 }

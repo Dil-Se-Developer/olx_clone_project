@@ -1,6 +1,6 @@
 .header_section {
     display: flex;
-    background: white;
+    background: var(--main-heading);
     justify-content: space-around;
     align-items: center;
     padding: 0.8rem 0rem;

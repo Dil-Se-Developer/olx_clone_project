@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../UI/FormInput";
+import GeneralHeader from '../UI/GeneralHeader';
 import "./SignUpForm.css";
 
 const SignUpForm = (props) => {
@@ -38,7 +39,10 @@ const SignUpForm = (props) => {
   };
 
   useEffect(() => {
-    // console.log(formErrors);
+    // function disableBack() { window.history.forward() }
+    // setTimeout(disableBack(), 0)
+    //   window.onunload = function () { return null }
+  
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
       axios
@@ -56,6 +60,7 @@ const SignUpForm = (props) => {
               .post("http://localhost:3000/users", formValues)
               .then((response) => response.data)
               .then((userData) => {
+                props.handleLogin()
                 Navigate("/home", { replace: true });
               })
               .catch((error) => {
@@ -105,88 +110,91 @@ const SignUpForm = (props) => {
   };
 
   return (
-    <div className="form_card">
-      <form>
-        <FormInput
-          inputLabel="First Name:-"
-          inputType="text"
-          inputName="firstname"
-          inputValue={formValues.firstname}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.lastname}
-          customClass={"form_input"}
-        />
+    <>
+      <GeneralHeader />
+      <div className="form_card">
+        <form>
+          <FormInput
+            inputLabel="First Name:-"
+            inputType="text"
+            inputName="firstname"
+            inputValue={formValues.firstname}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.lastname}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="Last Name:-"
-          inputType="text"
-          inputName="lastname"
-          inputValue={formValues.lastname}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.lastname}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="Last Name:-"
+            inputType="text"
+            inputName="lastname"
+            inputValue={formValues.lastname}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.lastname}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="Mobile No:-"
-          inputType="number"
-          inputName="mobileno"
-          inputValue={formValues.mobileno}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.mobileno}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="Mobile No:-"
+            inputType="number"
+            inputName="mobileno"
+            inputValue={formValues.mobileno}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.mobileno}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="Email ID:-"
-          inputType="email"
-          inputName="emailid"
-          inputValue={formValues.emailid}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.emailid}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="Email ID:-"
+            inputType="email"
+            inputName="emailid"
+            inputValue={formValues.emailid}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.emailid}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="City:-"
-          inputType="text"
-          inputName="city"
-          inputValue={formValues.city}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.city}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="City:-"
+            inputType="text"
+            inputName="city"
+            inputValue={formValues.city}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.city}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="Country:-"
-          inputType="text"
-          inputName="country"
-          inputValue={formValues.country}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.country}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="Country:-"
+            inputType="text"
+            inputName="country"
+            inputValue={formValues.country}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.country}
+            customClass={"form_input"}
+          />
 
-        <FormInput
-          inputLabel="Password:-"
-          inputType="password"
-          inputName="password"
-          inputValue={formValues.password}
-          onHandleChange={handleChange}
-          errorMessage={formErrors.password}
-          customClass={"form_input"}
-        />
+          <FormInput
+            inputLabel="Password:-"
+            inputType="password"
+            inputName="password"
+            inputValue={formValues.password}
+            onHandleChange={handleChange}
+            errorMessage={formErrors.password}
+            customClass={"form_input"}
+          />
 
-        <div className="form_input">
-          {/* <button onClick={loginHandler} className="form_btn">
+          <div className="form_input">
+            {/* <button onClick={loginHandler} className="form_btn">
             Login
           </button> */}
-          <button onClick={signupHandler} className="form_btn">
-            Sign Up
-          </button>
-        </div>
-      </form>
-    </div>
+            <button onClick={signupHandler} className="form_btn">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 

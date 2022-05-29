@@ -43,7 +43,7 @@ const SellCardsDetails = () => {
                     </div>
                     <div className='selling_details'>
                         <h3>Seller Description</h3>
-                        <a href={'https://wa.me/' + 112233} target="_blank" >Contact to seller</a>
+                        <a href={'https://wa.me/' + 9191919199} target="_blank" >Contact to seller</a>
                     </div>
                 </div>
             

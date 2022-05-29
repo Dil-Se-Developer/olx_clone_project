@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { BsChat, BsSearch } from "react-icons/bs";
 import { MdNotificationsNone } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
-import ToggleButton from "../ToggleMode/ToggleButton";
 import "./Header.css";
 
 const Header = (props) => {
@@ -21,6 +20,7 @@ const Header = (props) => {
 
   const logoutHandler = (event) => {
     event.preventDefault();
+    props.handleLogout()
     Navigate("/", { replace: true });
   }
 
@@ -59,7 +59,6 @@ const Header = (props) => {
       <button className="header_sell_btn logout_btn" onClick={logoutHandler}>
         Logout
       </button>
-      <ToggleButton/>
     </header>
   );
 };

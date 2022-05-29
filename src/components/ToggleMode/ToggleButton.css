@@ -1,4 +1,13 @@
 .togglebtn {
-    width: 8rem;
-    height: 2rem;
+    position: fixed;
+    z-index: 10;
+    bottom: 8rem;
+    left: 0;
+    padding: 0.6rem;
+    border-radius: 2rem ;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    background-color: var(--toggle-color);
+    color: var(--bg-clr);
 }

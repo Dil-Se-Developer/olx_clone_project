@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 import './ToggleButton.css'
 
@@ -15,7 +16,7 @@ const ToggleButton = () => {
 
     return (
         <div>
-            <button className='togglebtn' onClick={() => styleChanger()}>Toggle Mode</button>
+            <button className='togglebtn' onClick={() => styleChanger()}>{theme === "light_theme" ? <BsFillSunFill /> : <BsFillMoonFill />}</button>
         </div>
     )
 }

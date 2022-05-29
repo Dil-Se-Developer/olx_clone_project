@@ -160,7 +160,7 @@ const Post = (props) => {
             <br></br>
             {errorObj.postimg && <p>Image is required</p>}
 
-            <img src={formValues.postimg} height="200px" alt="" />
+            <img src={formValues.postimg} height="200px" alt="" />   
           </div>
 
           <div className="form_input">

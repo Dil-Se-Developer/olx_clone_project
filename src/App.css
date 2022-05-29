@@ -1,12 +1,25 @@
-.dark_theme {
-    --bg-clr: #111b20;
-    --para-clr: #fff;
-}
-
 .light_theme {
     --bg-clr: #fff;
     --para-clr: #333;
+    --main-heading: #a5d3f0;
+    --btn-bg-color: #35a4e9;
+    --btn-text-color: #fff;
+    --card-bg-color:#a5d3f0;
+    --toggle-color: #000;
 }
+
+
+.dark_theme {
+    --bg-clr: #111b20;
+    --para-clr: #fff;
+    --main-heading: #fff;
+    --btn-bg-color: #111b20;
+    --btn-text-color: #fff;
+    --card-bg-color:#fff;
+    --toggle-color: #fff;
+}
+
+
 
 
 .form_card {
@@ -17,14 +30,14 @@
     max-width: 450px;
     width: 100%;
     margin: 4rem auto;
-    background-color: white;
+    background-color: var(--card-bg-color);
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 500;
 }
 
 .form_card p {
-    color: red;
+    color: var(--para-clr);
     text-align: center;
 }
 
@@ -53,12 +66,12 @@
     padding: 1rem;
     margin-left: 0.5rem;
     border-radius: 0.2rem;
-    background-color: rebeccapurple;
+    background-color: var(--btn-bg-color);
     color: white;
     font-size: 1rem;
     letter-spacing: 0.1rem;
 }
 
 .form_btn:hover {
-    background-color: black;
+    background-color: var(--btn-bg-color);
 }

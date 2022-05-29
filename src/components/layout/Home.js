@@ -89,8 +89,8 @@ const Home = (props) => {
   $products = searchProducts($products)
 
   return (
-    <div>
-      <Header searchValue={searchString} handleSearch={handleSearchChange} />
+    <div className="home_section">
+      <Header searchValue={searchString} handleSearch={handleSearchChange} handleLogout = {props.handleLogout} />
       <SubHeader selectedCategory={selectedCategory} handleCategorySelect={handleCategoryChange} />
       <SortProducts handleSoritngSelect={handleSoritngChange} />
       <SellProducts postValues={$products} />
