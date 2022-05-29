@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import SubHeader from "./SubHeader";
-import Sort from "./Sort";
+import SortProducts from "./SortProducts";
 import SellProducts from "./SellProducts";
-import './Header.css'
+import './Home.css'
 
 const Home = (props) => {
 
@@ -62,7 +62,7 @@ const Home = (props) => {
 
   const handleSoritngChange = (event) => {
     let { value } = event.target
-    console.log(value);
+    // console.log(value);
     setSortValue(value)
   }
 
@@ -87,11 +87,12 @@ const Home = (props) => {
   let $products = filterProducts()
   $products = sortData(sortValue,$products)
   $products = searchProducts($products)
+
   return (
     <div>
       <Header searchValue={searchString} handleSearch={handleSearchChange} />
       <SubHeader selectedCategory={selectedCategory} handleCategorySelect={handleCategoryChange} />
-      <Sort handleSoritngSelect={handleSoritngChange} />
+      <SortProducts handleSoritngSelect={handleSoritngChange} />
       <SellProducts postValues={$products} />
     </div>
   );

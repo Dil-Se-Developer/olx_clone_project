@@ -13,7 +13,7 @@ const SellCard = (props) => {
   return (
     <div className='sellcard' onClick={() => { handleClick(props.postValue.id) }}>
       <img src={props.postValue.postimg} alt="" />
-      <h3>$ {props.postValue.productprice}</h3>
+      <h3> &#x20B9; {props.postValue.productprice}</h3>
       <p>{props.postValue.brand}</p>
       <span>{props.postValue.modelname}</span>
     </div>

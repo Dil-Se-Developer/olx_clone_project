@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './Sort.css'
+import './SortProducts.css'
 
-const Sort = ({ handleSoritngSelect }) => {
+const SortProducts = ({ handleSoritngSelect }) => {
     return (
         <div className="sort_section">
             <label htmlFor="sort">SORT BY: </label>
@@ -15,4 +15,4 @@ const Sort = ({ handleSoritngSelect }) => {
     )
 }
 
-export default Sort
+export default SortProducts

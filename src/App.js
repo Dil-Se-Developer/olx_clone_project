@@ -5,7 +5,8 @@ import LoginForm from "./components/FormAuthentication/LoginForm";
 import SignUpForm from "./components/FormAuthentication/SignUpForm";
 import Home from "./components/layout/Home";
 import Post from './components/layout/Post'
-import Test from "./components/Test";
+import SellCardsDetails from "./components/SellCards/SellCardsDetails";
+
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Route path="signup" element={<SignUpForm />}></Route>
       <Route path="home" element={<Home />}></Route>
       <Route path="home/post" element={<Post />}></Route>
-      <Route path="home/product/:id" element={<Test />}></Route>
+      <Route path="home/product/:id" element={<SellCardsDetails />}></Route>
     </Routes>
   )
 }

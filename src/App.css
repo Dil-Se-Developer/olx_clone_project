@@ -1,6 +1,13 @@
-body {
-    background: rebeccapurple;
+.dark_theme {
+    --bg-clr: #111b20;
+    --para-clr: #fff;
 }
+
+.light_theme {
+    --bg-clr: #fff;
+    --para-clr: #333;
+}
+
 
 .form_card {
     display: flex !important;
