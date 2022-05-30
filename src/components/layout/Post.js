@@ -40,14 +40,14 @@ const Post = (props) => {
         .post("http://localhost:3000/sellproducts", formValues)
         .then((response) => response.data)
         .then((postData) => {
-          console.log(postData);
+          // console.log(postData);
           Navigate("/home");
         })
         .catch((error) => {
           console.log(error);
         });
     }
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleChange = (event) => {
@@ -75,7 +75,7 @@ const Post = (props) => {
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
+      fileReader.readAsDataURL(file); 
 
       fileReader.onload = () => {
         resolve(fileReader.result);
@@ -154,7 +154,7 @@ const Post = (props) => {
             <input type="file"
               id="postimg" name="postimg"
               accept="image/png, image/jpeg" onChange={(event) => {
-                uploadImage(event);
+                uploadImage(event); 
               }} />
 
             <br></br>
@@ -169,7 +169,7 @@ const Post = (props) => {
             </button>
           </div>
         </form>
-      </div>
+      </div> 
     </>
   )
 };

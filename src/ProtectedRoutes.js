@@ -1,18 +1,18 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import LoginForm from './components/FormAuthentication/LoginForm'
+import { Navigate, Outlet } from 'react-router-dom'
+// import LoginForm from './components/FormAuthentication/LoginForm'
 
 
-const useAuth = (x) => {
-    let user = { loggedIn: x }
+const useAuth = (isAuthenticated) => {
+    let user = { loggedIn: isAuthenticated }
     return user.loggedIn
 }
 
 function ProtectedRoute(props) {
-    let {isAuthenticated,handleLogin} = props
+    let {isAuthenticated} = props
     const isAuth = useAuth(isAuthenticated)
     return (
-        isAuth ? <Outlet /> : <LoginForm handleLogin={handleLogin} />
+        isAuth ? <Outlet /> : <Navigate to ='/' />
     )
 }
 

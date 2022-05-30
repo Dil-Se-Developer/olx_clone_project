@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import FormInput from "../UI/FormInput";
-import GeneralHeader from '../UI/GeneralHeader';
+import GeneralHeader from "../UI/GeneralHeader";
 import "./LoginForm.css";
 
 const LoginForm = (props) => {
@@ -19,7 +19,7 @@ const LoginForm = (props) => {
     event.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleChange = (event) => {
@@ -50,7 +50,7 @@ const LoginForm = (props) => {
     // function disableBack() { window.history.forward() }
     // setTimeout(disableBack(), 0)
     //   window.onunload = function () { return null }
-    
+
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       axios
         .get("http://localhost:3000/users")
@@ -58,9 +58,9 @@ const LoginForm = (props) => {
         .then((usersData) => {
           let usersEmail = usersData.map((user) => user.emailid);
           let usersPassword = usersData.map((user) => user.password);
-          console.log(usersData);
-          console.log(usersEmail);
-          console.log(usersPassword);
+          // console.log(usersData);
+          // console.log(usersEmail);
+          // console.log(usersPassword);
           return (
             usersEmail.includes(formValues.emailid) &&
             usersPassword.includes(formValues.password)
@@ -68,7 +68,7 @@ const LoginForm = (props) => {
         })
         .then((userExist) => {
           if (userExist) {
-            props.handleLogin()
+            props.handleLogin();
             Navigate("/home");
           } else {
             alert("Kindly Check emailid and password");
@@ -76,14 +76,14 @@ const LoginForm = (props) => {
         })
         .catch((error) => {
           console.log(error);
-        })
+        });
     }
   }, [formErrors]);
 
   return (
     <>
       <GeneralHeader />
-      <div className="form_card">
+      <div className="form_card login_card">
         <form>
           <FormInput
             inputLabel="Email ID:-"
@@ -103,7 +103,7 @@ const LoginForm = (props) => {
             onHandleChange={handleChange}
             customClass={"form_input"}
           />
-          <Link to="signup">Create an account</Link>
+
           <div className="form_input login_btn">
             <button className="form_btn" onClick={loginHandler}>
               Login
@@ -111,6 +111,7 @@ const LoginForm = (props) => {
           </div>
         </form>
       </div>
+      <Link className="form_card navigate_signup" to="signup">Create an account</Link>
     </>
   );
 };

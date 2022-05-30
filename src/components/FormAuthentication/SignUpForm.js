@@ -22,6 +22,7 @@ const SignUpForm = (props) => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (event) => {
+    // console.log(event.target);
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
     // console.log(formValues);
@@ -44,7 +45,7 @@ const SignUpForm = (props) => {
     //   window.onunload = function () { return null }
   
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
+      // console.log(formValues);
       axios
         .get("http://localhost:3000/users")
         .then((responses) => responses.data)

@@ -1,3 +1,17 @@
-.login_btn{
+.login_card {
+    margin: 4rem auto 2rem auto;
+}
+
+.login_btn {
     text-align: center;
+}
+
+.navigate_signup {
+    margin: 0rem auto 4rem auto;
+    background: transparent;
+    border: 1px solid var(--toggle-color);
+    max-width: 420px;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: var(--para-clr);
 }
