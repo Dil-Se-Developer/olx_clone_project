@@ -16,7 +16,7 @@ const ToggleButton = () => {
 
     return (
         <div>
-            <button className='togglebtn' onClick={() => styleChanger()}>{theme === "light_theme" ? <BsFillSunFill /> : <BsFillMoonFill />}</button>
+            <button className='togglebtn' onClick={() => styleChanger()}>{theme === "light_theme" ? <BsFillMoonFill /> : <BsFillSunFill />}</button>
         </div>
     )
 }
