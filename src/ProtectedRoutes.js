@@ -8,7 +8,7 @@ const useAuth = (isAuthenticated) => {
     return user.loggedIn
 }
 
-function ProtectedRoute(props) {
+export function ProtectedRoutes(props) {
     let {isAuthenticated} = props
     const isAuth = useAuth(isAuthenticated)
     return (
@@ -16,4 +16,10 @@ function ProtectedRoute(props) {
     )
 }
 
-export default ProtectedRoute
+export function ProtectedHome(props) {
+    let  {isAuthenticated} = props
+    const isAuth = useAuth(isAuthenticated)
+    return (
+        isAuth ? <Outlet /> : <Navigate to= '/home' />
+    )
+}
